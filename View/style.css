@@ -1,0 +1,25 @@
+.vincent {
+	background-color: #FF9900;
+}
+.david {
+	background-color: #00CCFF;
+}
+.thomas {
+	background-color: #00FF33;
+}
+.christophe {
+	background-color: #FFFF00;
+}
+.PERSONNE{
+	background-color: #FF0000;
+}
+.personne{
+	background-color: #FF0000;
+}
+.container {
+	width:950px;
+	margin: 0 auto;
+}
+.annee {
+	text-align:center;
+}
