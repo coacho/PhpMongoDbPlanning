@@ -1,0 +1,101 @@
+<?php
+
+    class userManager {
+      
+        function getAllNom(){ 
+            try{
+
+                // On ne devrait suremenent pas remettre ces ligne d'appel de la base
+                // et faire $manager un object mais je ne sais pas comment faire en php 
+                $manager = new MongoDB\Driver\Manager('mongodb+srv://Mathieu:MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test');
+                $filter = [];
+                $option = [
+                    'sort' =>
+                    [
+                        'nom' => 1
+                    ],
+                ];
+
+                $read = new MongoDB\Driver\Query($filter, $option);
+                $personnes = $manager ->executeQuery('Planning.Personnes', $read);
+                $cpt = 0;
+
+                foreach($personnes as $user){
+                    $user = $user->nom;
+                    $listPerson[$cpt]  = $user;
+                    $cpt++;
+                }
+                
+                return json_encode($listPerson);
+            }
+            catch(MongoDB\Driver\ConnectionException $e)
+            {
+                   echo $e->getMessage();
+            }
+        }
+    }
+
+    function getAllCouleur(){
+        try{
+
+            // On ne devrait suremenent pas remettre ces ligne d'appel de la base
+            // et faire $manager un object mais je ne sais pas comment faire en php 
+            $manager = new MongoDB\Driver\Manager('mongodb+srv://Mathieu:MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test');
+            $filter = [];
+            $option = [
+                'sort' =>
+                [
+                    'couleur' => 1
+                ],
+            ];
+
+            $read = new MongoDB\Driver\Query($filter, $option);
+            $personnes = $manager ->executeQuery('Planning.Personnes', $read);
+            $cpt = 0;
+
+            foreach($personnes as $user){
+                $couleur = $user->nom;
+                $listCouleur[$cpt]  = $couleur;
+                $cpt++;
+            }
+            return $listCouleur;
+        }
+        catch(MongoDB\Driver\ConnectionException $e)
+        {
+               echo $e->getMessage();
+        }
+    }
+
+    function getAllNbSemaines(){
+        try{
+
+            // On ne devrait suremenent pas remettre ces ligne d'appel de la base
+            // et faire $manager un object mais je ne sais pas comment faire en php 
+            $manager = new MongoDB\Driver\Manager('mongodb+srv://Mathieu:MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test');
+            $filter = [];
+            $option = [
+                'sort' =>
+                [
+                    'nbSemaines' => 1
+                ],
+            ];
+
+            $read = new MongoDB\Driver\Query($filter, $option);
+            $personnes = $manager ->executeQuery('Planning.Personnes', $read);
+            $cpt = 0;
+
+            foreach($personnes as $user){
+                $nbSemaines = $user->nbSemaines;
+                $listnbSemaines[$cpt]  = $nbSemaines;
+                $cpt++;
+            }
+            return $listnbSemaines;
+        }
+        catch(MongoDB\Driver\ConnectionException $e)
+        {
+               echo $e->getMessage();
+        }
+    }
+    
+
+?>

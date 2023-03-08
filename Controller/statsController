@@ -1,0 +1,22 @@
+<?php
+
+include_once("Model/userModel.php");
+
+    class statsController {
+
+        public function ___construct(){
+            require_once('./Model/statsModel.php');
+            $this->statsController = new StatsController();
+        }
+
+        public function returnPlanning(){
+            $nom = $this->userModel->getNom();
+            $nbSemaines = $this->userModel->getNbSemaines();
+            $_POST['nomPersonne'] = $nom;
+            $_POST['nbSemaines'] = $nbSemaines;
+        }
+
+
+    }
+
+?>

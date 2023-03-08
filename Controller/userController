@@ -1,0 +1,34 @@
+<?php
+
+    class userController{
+        
+        public function __construct(){
+            require_once('./Model/userModel');
+            $this->userController = new userModel();
+        }
+
+        public function returnNom(){
+            $nom = $this->userModel->getNom();
+            $_POST['nom'] = $nom;
+        }
+
+        public function returnCouleur(){
+            $couleur = $this->userModel->getCouleur();
+            $_POST['couleur'] = $couleur;
+        }
+        
+        public function returnNbSemaines(){
+            $nbSemaine = $this->userModel->getNbSemaines();
+            $_POST['nbSemaine'] = $nbSemaine;
+        }
+
+        //ajoute le nb de semaines à la Personne
+        public function addSemaines($semaines){
+            $nbSemaine = $this->userModel->getNbSemaines();
+            $nbsemaine = $nbSemaine + $semaines;
+            setNbSemaines($nbSemaine);
+        }
+
+    }
+
+?>

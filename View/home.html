@@ -3,593 +3,590 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="script.js" rel="script" type="text/js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<link href="./View/style.css" rel="stylesheet" type="text/css">
+<script src="./View/script.js"></script>
 
 <title>Planning Corvée Patates</title>
 </head>
-
 <body>
 <div class="container">
-    <p>Voici un calendrier annuel des corvées hebdomadaire d'épluchage des patates (rudimentaire et non finalisé !). </p>
-    <ul>
-      <li>Les éplucheurs sont répartis sur les 52 semaines de l'année. </li>
-      <li>Une selection de l'année permet de faire défiler le calendrier.</li>
-      <li>Les données seront stockées et gérées dans une base de données MongoDB. </li>
-      <li>Vous devez finaliser vous-même la structure JSON des collections correspondantes.</li>
-      <li>Les statistiques de l'année (Nb de semaines pour chaque participants, ...) seront calculées par les bonnes requêtes MongoDB (pas en PHP):</li>
-      <li>L'accès à l'agenda, par un utislisateur, est conditionné par une connexion à son compte.</li>
-    </ul>
-    <h1> Planning des corvées d'épluchage</h1>
-  <p class="annee">
-    <label>Année : 
-      <select name="annee">
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-        <option value="2025">2025</option>
-      </select>
-    </label>
-  </p>
-  <form action="#" method="post" name="form1" id="form1">
-    <input name="ecriture" type="hidden" value="1">
+  <p>Voici un calendrier annuel des corvées hebdomadaire d'épluchage des patates (rudimentaire et non finalisé !). </p>
+  <ul>
+    <li>Les éplucheurs sont répartis sur les 52 semaines de l'année. </li>
+    <li>Une selection de l'année permet de faire défiler le calendrier.</li>
+    <li>Les données seront stockées et gérées dans une base de données MongoDB. </li>
+    <li>Vous devez finaliser vous-même la structure JSON des collections correspondantes.</li>
+    <li>Les statistiques de l'année (Nb de semaines pour chaque participants, ...) seront calculées par les bonnes requêtes MongoDB (pas en PHP):</li>
+    <li>L'accès à l'agenda, par un utislisateur, est conditionné par une connexion à son compte.</li>
+  </ul>
+  <h1> Planning des corvées d'épluchage</h1>
+<p class="annee"><label>Année : <select name="annee">
+  <option value="2022">2022</option>
+  <option value="2023">2023</option>
+  <option value="2024">2024</option>
+  <option value="2025">2025</option>
+</select></label>
+</p>
+<form action="#" method="post" name="form1" id="form1">
+	<input name="ecriture" type="hidden" value="1">
   <table border='1' align='center'>
     <tr>
-      <td>
-        08/01/2023
-        <select name='1' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+      <td class="personne">08/01/2023
+        <select name='0' class='form-control sel_field' id='sel_user_0' >   
+          <!-- <option value="semaine_person"></option> listObj $user.nom selected=semaine(user), user.nbsemaine++ , return user.nom -->
+          <!-- ici je veux remplir la liste deroulante avec les Personne.nom et veux changer la couleur du fond en fonction de Person.couleur -->
+          <option value='0' > - Choisir un personne -</option>
+        
         </select>
       </td>
-      <td>
-        15/01/2023
-        <select name='2' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">15/01/2023
+        <select name='1' class='form-control sel_field' id='sel_user_1' >
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        22/01/2023
-        <select name='3' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">22/01/2023
+        <select name='2' class='form-control sel_field' id='sel_user_2'>
+          <option value='0' > - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        29/01/2023
-        <select name='4' class="david">
-          <option value="personne">personne</option>
+      <td class="personne">29/01/2023
+        <select name='3' class='form-control sel_field' id='sel_user_3'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        05/02/2023
-        <select name='5' class="personne">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        12/02/2023
-        <select name='6' class="christophe">
-        <option value="personne">personne</option>
-        <option value="vincent"    >vincent</option>
-        <option value="david"      >david</option>
-        <option value="thomas"      >thomas</option>
-        <option value="christophe" selected >christophe</option>
-        </select>
-      </td>
-      <td>
-        19/02/2023
-        <select name='7' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        26/02/2023
-        <select name='8' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">05/02/2023
+        <select name='4' class='form-control sel_field' id='sel_user_4'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
+      </select>
+      </td>
+      <td class="personne">12/02/2023
+        <select name='5' class='form-control sel_field' id='sel_user_5'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">19/02/2023
+        <select name='6' class='form-control sel_field' id='sel_user_6'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">26/02/2023
+        <select name='7' class='form-control sel_field' id='sel_user_7'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        05/03/2023
-        <select name='9' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        12/03/2023
-        <select name='10' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        19/03/2023
-        <select name='11' class="david">
-          <option value="personne">personne</option>
+      <td class="personne">05/03/2023
+        <select name='8' class='form-control sel_field' id='sel_user_8'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        26/03/2023
-        <select name='12' class="david">
-          <option value="personne">personne</option>
+      <td class="personne">12/03/2023
+        <select name='9' class='form-control sel_field' id='sel_user_9'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">19/03/2023
+        <select name='10' class='form-control sel_field' id='sel_user_10'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">26/03/2023
+        <select name='11' class='form-control sel_field' id='sel_user_11'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        02/04/2023
-        <select name='13' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
+      <td class="personne">02/04/2023
+        <select name='12' class='form-control sel_field' id='sel_user_12'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        09/04/2023
-        <select name='14' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
+      <td class="personne">09/04/2023
+        <select name='13' class='form-control sel_field' id='sel_user_13'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        16/04/2023
-        <select name='15' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        23/04/2023
-        <select name='16' class="david">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        30/04/2023
-        <select name='17' class="david">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        07/05/2023
-        <select name='18' class="christophe">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe" selected >christophe</option>
-      </select>
-      </td>
-      <td>
-        14/05/2023
-        <select name='19' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">16/04/2023
+        <select name='14' class='form-control sel_field' id='sel_user_14'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        21/05/2023
-        <select name='20' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        28/05/2023
-        <select name='21' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        04/06/2023
-        <select name='22' class="thomas">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        11/06/2023
-        <select name='23' class="christophe">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe" selected >christophe</option>
-      </select>
-      </td>
-      <td>
-        18/06/2023
-        <select name='24' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">23/04/2023
+        <select name='15' class='form-control sel_field' id='sel_user_15'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        25/06/2023
-        <select name='25' class="thomas">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        02/07/2023
-        <select name='26' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        09/07/2023
-        <select name='27' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        16/07/2023
-        <select name='28' class="david">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        23/07/2023
-        <select name='29' class="thomas">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        30/07/2023
-        <select name='30' class="personne">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        06/08/2023
-        <select name='31' class="thomas">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
-      </select>
-      </td>
-      <td>
-        13/08/2023
-        <select name='32' class="thomas">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        20/08/2023
-        <select name='33' class="personne">
-          <option value="personne">personne</option>
+      <td class="personne">30/04/2023
+        <select name='16' class='form-control sel_field' id='sel_user_16'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-       </select>
-      </td>
-      <td>
-        27/08/2023
-        <select name='34' class="christophe">
-         <option value="personne">personne</option>
-        <option value="vincent"    >vincent</option>
-        <option value="david"      >david</option>
-        <option value="thomas"      >thomas</option>
-        <option value="christophe" selected >christophe</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        03/09/2023
-        <select name='35' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        10/09/2023
-        <select name='36' class="david">
-          <option value="personne">personne</option>
+      <td class="personne">07/05/2023
+        <select name='17' class='form-control sel_field' id='sel_user_17'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">14/05/2023
+        <select name='18' class='form-control sel_field' id='sel_user_18'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">21/05/2023
+        <select name='19' class='form-control sel_field' id='sel_user_19'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        17/09/2023
-        <select name='37' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        24/09/2023
-        <select name='38' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        01/10/2023
-        <select name='39' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">28/05/2023
+        <select name='20' class='form-control sel_field' id='sel_user_20'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        08/10/2023
-        <select name='40' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">04/06/2023
+        <select name='21' class='form-control sel_field' id='sel_user_21'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">11/06/2023
+        <select name='22 class='form-control sel_field' id='sel_user_22'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">18/06/2023
+        <select name='23' class='form-control sel_field' id='sel_user_23'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        15/10/2023
-        <select name='41' class="christophe">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe" selected >christophe</option>
-        </select>
-      </td>
-      <td>
-        22/10/2023
-        <select name='42' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">25/06/2023
+        <select name='23' class='form-control sel_field' id='sel_user_24'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        29/10/2023
-        <select name='43' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">02/07/2023
+        <select name='25' class='form-control sel_field' id='sel_user_25'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        05/11/2023
-        <select name='44' class="david">
-          <option value="personne">personne</option>
+      <td class="personne">09/07/2023
+        <select name='26' class='form-control sel_field' id='sel_user_26'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
-          <option value="david"      selected>david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+      </select>
+      </td>
+      <td class="personne">16/07/2023
+        <select name='27' class='form-control sel_field' id='sel_user_27'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        12/11/2023
-        <select name='45' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">23/07/2023
+        <select name='28' class='form-control sel_field' id='sel_user_28'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        19/11/2023
-        <select name='46' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">30/07/2023
+        <select name='29' class='form-control sel_field' id='sel_user_29'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
-      <td>
-        26/11/2023
-        <select name='47' class="vincent">
-          <option value="personne">personne</option>
-          <option value="vincent"    selected>vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        03/12/2023
-        <select name='48' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">06/08/2023
+        <select name='30' class='form-control sel_field' id='sel_user_30'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">13/08/2023
+        <select name='31' class='form-control sel_field' id='sel_user_31'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
     <tr>
-      <td>
-        10/12/2023
-        <select name='49' class="christophe">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe" selected >christophe</option>
-        </select>
-      </td>
-      <td>
-        17/12/2023
-        <select name='50' class="personne">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe"  >christophe</option>
-        </select>
-      </td>
-      <td>
-        24/12/2023
-        <select name='51' class="christophe">
-          <option value="personne">personne</option>
-          <option value="vincent"    >vincent</option>
-          <option value="david"      >david</option>
-          <option value="thomas"      >thomas</option>
-          <option value="christophe" selected >christophe</option>
-        </select>
-      </td>
-      <td>
-        31/12/2023
-        <select name='52' class="thomas">
-          <option value="personne">personne</option>
+      <td class="personne">20/08/2023
+        <select name='32' class='form-control sel_field' id='sel_user_32'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
           <option value="vincent"    >vincent</option>
           <option value="david"      >david</option>
           <option value="thomas"     selected >thomas</option>
-          <option value="christophe"  >christophe</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">27/08/2023
+      <select name='33' class='form-control sel_field' id='sel_user_33'>
+        <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+      </select>
+      </td>
+      <td class="personne">03/09/2023
+        <select name='34' class='form-control sel_field' id='sel_user_34'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">10/09/2023
+        <select name='35' class='form-control sel_field' id='sel_user_35'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="personne">17/09/2023
+        <select name='36' class='form-control sel_field' id='sel_user_36'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">24/09/2023
+        <select name='37' class='form-control sel_field' id='sel_user_37'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">01/10/2023
+        <select name='38' class='form-control sel_field' id='sel_user_38'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">08/10/2023
+        <select name='39' class='form-control sel_field' id='sel_user_39'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="personne">15/10/2023
+        <select name='40' class='form-control sel_field' id='sel_user_40'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">22/10/2023
+        <select name='41' class='form-control sel_field' id='sel_user_41'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">29/10/2023
+        <select name='42' class='form-control sel_field' id='sel_user_42'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">05/11/2023
+        <select name='43' class='form-control sel_field' id='sel_user_43'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="personne">12/11/2023
+        <select name='44' class='form-control sel_field' id='sel_user_44'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">19/11/2023
+        <select name='45' class='form-control sel_field' id='sel_user_45'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">26/11/2023
+        <select name='46' class='form-control sel_field' id='sel_user_46'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">03/12/2023
+        <select name='47' class='form-control sel_field' id='sel_user_47'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="personne">10/12/2023
+        <select name='48' class='form-control sel_field' id='sel_user_48'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">17/12/2023
+        <select name='49' class='form-control sel_field' id='sel_user_49'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">24/12/2023
+        <select name='50' class='form-control sel_field' id='sel_user_50'>
+          <option value='0'> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
+        </select>
+      </td>
+      <td class="personne">31/12/2023
+        <select name='51' class='form-control sel_field' id='sel_user_51'>
+          <option value='0' class="personne"> - Choisir un personne -</option>
+          <!-- <option value="personne">personne</option>
+          <option value="vincent"    >vincent</option>
+          <option value="david"      >david</option>
+          <option value="thomas"     selected >thomas</option>
+          <option value="christophe"  >christophe</option> -->
         </select>
       </td>
     </tr>
   </table>
-<div>
-  <div align="center">
-  	<p>
-    	<input type="submit" value="Valider le planning">
-	</p>
+  <div>
+    <div align="center">
+      <p>
+        <input id="validPlanning" type="submit" value="Valider le planning">
+        <!-- ici je veux renseigner les valeurs du tableau dans collection Planning.Stats -->
+    </p>
+    </div>
   </div>
-</div>
 </form>
 <h2>Statistiques par ordre croissant</h2>
+<!-- ici je veux afficher la collection Stats avec Planning.Stats.nom et Planning.Stat.nbSemaines -->
 <ol>
   <li>Vincent : 5</li>
   <li>Christophe : 6</li>
@@ -599,4 +596,5 @@
 <p>&nbsp;</p>
 </div>
 </body>
+
 </html>

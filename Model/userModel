@@ -1,0 +1,57 @@
+<?php
+class userModel {
+
+    private $id;  
+    private $nom; 
+    private $nbSemaines; 
+    private $color;    
+    
+    function __construct(array $data)
+    {
+        $this->hydrate($data);
+    }
+
+    private function hydrate($data)
+    {
+        foreach($data as $key => $value)
+        {
+            $this -> $key = $value;
+        }
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    //l'id d'une Personne n'a pas à être modifier
+    public function setId(){
+        $this->id=$id;
+    }
+
+    public function getNom(){
+        return $this->nom;
+    }
+
+    //le nom d'une Personne n'a pas à être modifier avec cette application
+    public function setNom(){
+        $this->nom=$nom;
+    }
+
+    public function getNbSemaines(){
+        return $this->nbSemaines;
+    }
+
+    public function setNbSemaines(){
+        $this->nbSemaines=$nbSemaines;
+    }
+
+    public function getCouleur(){
+        return $this->couleur;
+    }
+
+    //la couleur d'une Personne n'a pas à être modifier normalement
+    public function setCouleur(){
+        $this->couleur=$couleur;
+    }    
+}
+?>

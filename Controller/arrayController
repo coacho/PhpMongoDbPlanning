@@ -1,0 +1,29 @@
+<?php
+
+    class arrayController {
+
+        public function ___construct(){
+            require_once('./Model/arrayManager.php');
+            $this->arrayController = new ArrayController();
+        }
+
+        public function cptNbSemaines(){
+            $semaines = $this->arrayController->getAllNbSemaines();
+            $_POST['nbSemaines'] = $semaines;
+        }
+
+        public function returnAllCouleur(){
+            $couleur = $this->arrayController->getAllCouleur();
+            $_POST['couleur[]'] = $couleur;
+        }
+
+        public function returnAllNom(){
+            $nom = $this->arrayController->getAllCouleur();
+            $_POST['nom[]'] = $nom;
+            //$nom= $_POST['nom'];
+            echo json_encode(array("nom"=>'success'));
+        }
+
+    }
+
+?>

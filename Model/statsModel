@@ -1,0 +1,41 @@
+<?php
+
+    class statsModel{
+
+        private $nomPersonne;
+        private $nbSemainesPersonnes;
+
+        private $color;    
+    
+        function __construct(array $data)
+        {
+            $this->hydrate($data);
+        }
+    
+        private function hydrate($data)
+        {
+            foreach($data as $key => $value)
+            {
+                $this -> $key = $value;
+            }
+        }
+        public function getNomPersonne(){
+            return $this->nomPersonne;
+        }
+    
+        public function setNomPersonne(){
+            $this->nomPersonne=$nomPersonne;
+        }
+
+        public function getNbSemainesPersonnes(){
+            return $this->nbSemainesPersonnes;
+        }
+    
+        public function setNbSemainesPersonnes(){
+            $this->nbSemainesPersonnes=$nbSemainesPersonnes;
+        }
+    
+
+    }
+
+?>
