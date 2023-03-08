@@ -1,0 +1,26 @@
+Fonctionnalité voulu:
+
+Un calendrier avec des Personnes prédéfinie récupérer depuis la collectio "Personnes" dans un base "Planning" MongoDb.
+
+Ces personnes ont une valeur nbSemaines en base qui prends +1 a la selection de leur nom dans le calendrier.
+
+La couleur de la case selectionner (en rouge par défault) prend la couleur en fonction de la valeur "couleur" en base.
+
+Le bouton de validation incremente le nombre de jours total en base dans la collection "Jours" en additionant les valeurs nbSemaines 
+de chaque personnnes.
+
+Fonctionnalité réel:
+
+La page index.php charge la vue view/home.html
+En front au chargement la function jquery getPerson() lance un appel ajax au back a la méthode php connexionDb, 
+la connexion réussit mais j'ai n une erreur
+"
+    Erreur d’analyse XML : aucun élément trouvé
+    Emplacement : http://localhost/mongoDB/planning/Model/connexionDB
+    Numéro de ligne 32, Colonne 3 : 
+"
+ce qui m'empèche de récupérer les données dans un variable "data" en front. 
+J'ai beau chercher autour j'ai toujours un erreur de ce type.
+
+En jquery j'ai fait une méthode pour récupèrer l'élément selectioner (théoriquement un nom depuis la base)
+et modifier la classe de la td pour changer la couleur du fond avec le css.

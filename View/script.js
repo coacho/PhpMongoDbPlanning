@@ -11,8 +11,13 @@
 //ici je veux récupèrer en ajax la liste de mes personnes depuis arrayController->returnAllNom() 
 //pour renseigner les nom selectionnable dans le planning
 $(document).ready(function(){
+
     var len = 5;
     var nb_sel = 52;
+
+    //inutile
+    getPerson();
+
     for(var sel_i = 0 ; sel_i<nb_sel; sel_i++){
         //$('#sel_user_'+sel_i).empty();
         for( var i = 1; i<len; i++){
@@ -28,32 +33,43 @@ $(document).ready(function(){
         //var id_to_class = id_current.children("option:selected").text();
         //var id_to_class = $('sel_user_0').find(":selected").text();
         //parent.className = $.trim(el.children("option:selected").text());
-        //parent.className = $.trim($('sel_user_0').children("option:selected").text());
+        parent.className = $.trim($('sel_user_0').children("option:selected").text());
         //console.log(parent.className);
     });
+
+    $('#validPlanning').click(function(){
+        $.ajax({
+            url:'./Controller/arrayController/cptNbSemaines',
+            type:'POST',
+            dataType: "json",
+            sucess: function(data){
+                console.log(data);
+            },
+            error: function(xhr, status, error) {
+                console.log("Error: " + error);
+                console.log(status);
+                console.log(xhr);
+            }
+        });
+    });
+
+
 });
-//change la couleur du fond de la td avec class="personne" par class="*nomSelectionner*" par celle enregistrer en base
 
 
-$(function(){ 
-    // add rest = true and jsonp = true to /etc/mongodb.conf, 
-    // then restart mongodb
-         $.ajax({
-                url: "mongodb+srv://Mathieu:MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test",
-                type: 'get',
-                dataType: 'jsonp',
-                jsonp: 'jsonp', // mongodb is expecting that                                                                                     
-            })
-            .done(function(data) {
-                d=JSON.stringify(data,undefined,1);
-                $("code").text(d).css("color","green");
-            })
-            .fail(function(request,status,error) {
-                $("code").text("get failed: "+error).css("color","red");
-            })
-            .always(function() {
-                console.log("finished")
-            })
 
-  });
-
+function getPerson(){
+    $.ajax({
+        url:'./Model/connexionDB',
+        type:'GET',
+        dataType: "json",
+        sucess: function(data){
+            console.log(data.data);
+        },
+        error: function(xhr, status, error) {
+            console.log("Error: " + error);
+            console.log(status);
+            console.log(xhr);
+        }
+    });
+};

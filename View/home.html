@@ -1,13 +1,12 @@
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<link href="./View/style.css" rel="stylesheet" type="text/css">
-<script src="./View/script.js"></script>
-
-<title>Planning Corvée Patates</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./View/script.js"></script>
+  <link href="./View/style.css" rel="stylesheet" type="text/css">
+  <title>Planning Corvée Patates</title>
 </head>
 <body>
 <div class="container">
@@ -579,7 +578,7 @@
   <div>
     <div align="center">
       <p>
-        <input id="validPlanning" type="submit" value="Valider le planning">
+        <input id="validPlanning" type="button" value="Valider le planning">
         <!-- ici je veux renseigner les valeurs du tableau dans collection Planning.Stats -->
     </p>
     </div>
@@ -588,10 +587,14 @@
 <h2>Statistiques par ordre croissant</h2>
 <!-- ici je veux afficher la collection Stats avec Planning.Stats.nom et Planning.Stat.nbSemaines -->
 <ol>
-  <li>Vincent : 5</li>
-  <li>Christophe : 6</li>
-  <li>David : 7</li>
-  <li>Thomas : 10</li>
+  <li>Vincent : </li>
+    <div id ="vincent"></div>
+  <li>Christophe : </li>
+    <div id = "christophe"></div>
+  <li>David : </li>
+    <div id ="david"></div>
+  <li>Thomas : </li>
+    <div id="thomas"></div>
 </ol>
 <p>&nbsp;</p>
 </div>

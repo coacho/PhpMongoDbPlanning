@@ -1,11 +1,11 @@
 <?php
     include("Model/userManager");
-    include("Model/connexionDB");
+    include("./Model/connexionDB");
 
     require_once("View/home.html");
 
-    $pdoBuilder = new connexionDB();
-    $db = $pdoBuilder->setConnexion();
+    //  $pdoBuilder = new connexionDB();
+    //  $db = $pdoBuilder->setConnexion();
 
    
 ?>

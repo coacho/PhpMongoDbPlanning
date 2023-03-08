@@ -1,5 +1,5 @@
 <?php
-
+    
     class arrayController {
 
         public function ___construct(){
@@ -21,7 +21,7 @@
             $nom = $this->arrayController->getAllCouleur();
             $_POST['nom[]'] = $nom;
             //$nom= $_POST['nom'];
-            echo json_encode(array("nom"=>'success'));
+            //echo json_encode(array("nom"=>'success'));
         }
 
     }

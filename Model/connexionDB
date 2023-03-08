@@ -1,28 +1,32 @@
-<?php
+<?php 
   
-    class connexionDB{
-        function setConnexion(){
-            try{
+    // class connexionDB{
+    //     function setConnexion(){
+    //         try{
                 
-                //$connexion = new Mongo();
-        
-                //$connecting_string = sprintf('mongo://%s:%/d/%s',$host,$port,$database);
-                //$connexion = new Mongo($connecting_string,array('username'=>$username,'password'=>$password));
-                //Connection MongoDb Atlas
-                $connexionString = "mongodb+srv://Mathieu:MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test";
-                $connexion = new MongoDB\Driver\Manager($connexionString);
-            
-                echo $connexion;
 
-                //$dbname = $connexion->selectedDB('test');
-                //$collection = $dbname->collection;
+                //$host = "Mathieu";
+                //$port = "MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test";
+                $database = "Planning";
         
-            }
-            catch (MongoDB\Driver\Exception\InvalidArgumentException $e)
-            {
-                echo $e->getMessage();
-            }
-        }
-    }
+                $connexion = new MongoDB\Driver\Manager("mongodb+srv://Mathieu:MmhD5OLApcFvYoVB@cluster0.n9u83qq.mongodb.net/test");
+                
+                $query = new MongoDB\Driver\Query([]);
+                $cursor = $connexion->executeQuery("$database.Personnes",$query);
+                
+                $data = [];
+                foreach($cursor as $document){
+                    $data[] = $document;
+                } 
+
+                 echo json_encode($data);
+
+    //         }
+    //         catch (MongoDB\Driver\Exception\InvalidArgumentException $e)
+    //         {
+    //             echo $e->getMessage();
+    //         }
+    //     }
+    // }
 
 ?>

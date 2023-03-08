@@ -1,0 +1,14 @@
+[
+    {
+        "_id":"01","nom":"vincent","nbSemaines":"","couleur":"orange"
+    },
+    {
+        "_id":"02" ,"nom":"david","nbSemaines":"","couleur":"bleu"
+    },
+    {
+        "_id":"03","nom":"thomas","nbSemaines":"","couleur":"vert"
+    },
+    {
+        "_id":"04","nom":"christophe","nbSemaines":"","couleur":"jaune"
+    }
+]
